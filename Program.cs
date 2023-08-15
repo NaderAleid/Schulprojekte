@@ -1,41 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace Instance
+namespace Autodigramm
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Clown Hans = new Clown();
-            Clown Mo = new Clown();
-            Katze Mic = new Katze();
-            Hans.Groesse = 1.50;
-            Hans.Name = "Nader";
-            Mo.Groesse = 1.23;
-            Mo.Name = "MO";
-            Mic.Name = "Jessica";
-            Mic.haarfarbe = "schwarz";
-            Mic.behart = true;
-            Mic.grosse = 1.69;
-            //Console.WriteLine($"{Hans.Name},{Hans.Groesse}");
-            //Console.WriteLine($"{Mo.Name},{Mo.Groesse}");
-            Mo.TalkAbutyourself();
-            Hans.TalkAbutyourself();
-            Console.WriteLine($"{Mic.Name},{Mic.haarfarbe},{Mic.grosse},{Mic.behart}");
-
-            Mo.GeldHinzufugen(20);
-            Mo.GuthabenAnzeigen();
-            Mo.GeldEntfernen(10);
-            Mo.GuthabenAnzeigen();
-            Mo.GeldEntfernen(30);
-            Mo.GuthabenAnzeigen();
-
+            Eigenschaften car = new Eigenschaften();
+            Fahrer fahrer = new Fahrer();
+            //car.farbikat = "KIa";
+            //car.Bezeichnung = "XE";
+            //car.geschwindigkeit = 200;
+            //car.baujahr = 2020;
+            //car.tankinhalt = 30;
+            //car.fahrer = "Ich fahre selber das Auto"
+            car.Setfarbikat("Auto model: BMW");
+            Console.WriteLine(car.Getfarbikat());
+            car.SetBezeichnung("Bezeichnung: XE3");
+            Console.WriteLine(car.GetBezeichnung());
+            car.Setbaujahr(2020);
+            Console.WriteLine($"baujahr: { car.Getbaujahr()}");
+            car.Setgeschwindigkeit(200);
+            Console.WriteLine($"geschwindigkeit: {car.Getgeschwindigkeit()}");
+            car.Setbaujahr(2020);
+            Console.WriteLine($"baujahr: {car.Getbaujahr()}");
+            car.Settankinhalt(30);
+            Console.WriteLine($"tankinhalt: {car.Gettankinhalt()}");
+            car.Setfahrer("Fahrer Name: Nader");
+            Console.WriteLine(car.Getfahrer());
+            Console.Write("geschwindischkeiterhohe:");
+            Console.ReadLine();
+            Console.Write("Um wie viel km/h willst du deine Geschwidigkeit erhöhen? ");
+            int input = int.Parse(Console.ReadLine());
+            //fahrer.geschwindischkeiterhohen(input);
+            Console.WriteLine(fahrer.geschwindischkeiterhohen(input));
 
         }
     }
